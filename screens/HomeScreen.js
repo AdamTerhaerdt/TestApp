@@ -16,7 +16,7 @@ const HomeScreen = () => {
   }, [])
   
   return (
-    <SafeAreaView className="bg-white pt-5">
+    <SafeAreaView className="bg-white pt-5 flex-1">
       <View className="flex-row pb-3 items-center mx-4 space-x-2 px-4">
         <Image
           source={{
@@ -48,7 +48,7 @@ const HomeScreen = () => {
       </View>
 
       {/* Body */}
-      <ScrollView className="bg-gray-100"
+      <ScrollView className="bg-gray-100" style={{flexGrow: 1}}
       contentContainerStyle>
 
         {/* Categories */}
@@ -63,13 +63,13 @@ const HomeScreen = () => {
 
         <FeaturedRow
           id='1234'
-          title="Featured"
+          title="Tasty Discounts"
           description="Everyone's been enjoying juicy discounts!"
         />
 
         <FeaturedRow
           id='12345'
-          title="Featured"
+          title="Offers near you!"
           description="Why not support your local resturant tonight!"
         />
       </ScrollView>

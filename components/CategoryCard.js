@@ -9,7 +9,6 @@ const CategoryCard = ({ imgUrl, title}) => {
             source={{
                 uri: imgUrl,
             }}
-              
          />
         <Text className='absolute bottom-1 left-1 text-white font-bold'>
             {title}

@@ -25,7 +25,9 @@
     "react-native-screens": "~3.20.0",
     "react-native-svg": "13.4.0",
     "react-native-web": "~0.18.10",
-    "react-native-webview": "^11.26.1"
+    "react-native-webview": "11.26.0",
+    "url-search-params-polyfill": "^8.1.1",
+    "webpack-manifest-plugin": "^2.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

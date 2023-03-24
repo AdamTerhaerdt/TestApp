@@ -1,13 +1,11 @@
-import { defineConfig } from '@sanity/client'
-import { ImageUrlBuilder } from "@sanity/image-url";
+import 'url-search-params-polyfill';
+import { createClient } from "@sanity/client";
 
-const client = defineConfig({
-    projectId: "3s47rjjr",
-    dataset: "production",
+export const client = createClient({
+    projectId: '3s47rjjr',
+    dataset: 'production',
+    apiVersion: '2023-03-05',
     useCdn: true,
-});
-
-const builder = ImageUrlBuilder(client);
-export const urlFor = (source) => builder.image(source);
+})
 
 export default client;

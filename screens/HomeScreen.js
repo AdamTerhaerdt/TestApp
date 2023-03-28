@@ -6,6 +6,7 @@ import { AdjustmentsVerticalIcon, ChevronDownIcon, MagnifyingGlassIcon, Sparkles
 import Categories from '../components/Categories';
 import FeaturedRow from '../components/FeaturedRow';
 import { client } from '../sanity';
+import 'react-native-url-polyfill/auto';
 
 const HomeScreen = () => {
   const navigation = useNavigation();

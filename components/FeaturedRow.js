@@ -7,7 +7,6 @@ import 'react-native-url-polyfill/auto';
 
 const FeaturedRow = ({id, title, description}) => {
     const [restaurants, setRestaurants] = useState([]);
-
     useEffect(() => {
         client.fetch(
             `
@@ -24,11 +23,10 @@ const FeaturedRow = ({id, title, description}) => {
             `, { id: id }
         ).then(data => {
             setRestaurants(data?.restaurants);
-            console.log(restaurants);
         }).catch(error => {
             console.log(error);
           });
-    }, []);
+    }, [id]);
 
   return (
     <View>

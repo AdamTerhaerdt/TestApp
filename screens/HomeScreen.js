@@ -6,6 +6,7 @@ import { AdjustmentsVerticalIcon, ChevronDownIcon, MagnifyingGlassIcon, Sparkles
 import Categories from '../components/Categories';
 import FeaturedRow from '../components/FeaturedRow';
 import { client } from '../sanity';
+import 'react-native-url-polyfill/auto';
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -31,12 +32,11 @@ const HomeScreen = () => {
       `
     ).then(data => {
       setfeaturedCategories(data);
-      console.log(featuredCategories);
     }).catch(error => {
       console.log(error);
     });
   }, []);
-  
+
   return (
     <SafeAreaView className="bg-white pt-5 flex-1">
       <View className="flex-row pb-3 items-center mx-4 space-x-2 px-4">
@@ -77,7 +77,6 @@ const HomeScreen = () => {
         <Categories />
 
         {/* Featured Rows */}
-
         {featuredCategories?.map((category) => (
           <FeaturedRow
             key={category._id}

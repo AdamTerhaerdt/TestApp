@@ -32,7 +32,7 @@ const HomeScreen = () => {
       `
     ).then(data => {
       setfeaturedCategories(data);
-      console.log(featuredCategories);
+      console.log(data)
     }).catch(error => {
       console.log(error);
     });
@@ -78,7 +78,6 @@ const HomeScreen = () => {
         <Categories />
 
         {/* Featured Rows */}
-
         {featuredCategories?.map((category) => (
           <FeaturedRow
             key={category._id}

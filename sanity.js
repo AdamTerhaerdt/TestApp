@@ -1,6 +1,6 @@
 import 'url-search-params-polyfill';
 import { createClient } from "@sanity/client";
-import imageUrlBuilder from "@sanity/image-url"
+import imageUrlBuilder from '@sanity/image-url'
 
 export const client = createClient({
     projectId: '3s47rjjr',

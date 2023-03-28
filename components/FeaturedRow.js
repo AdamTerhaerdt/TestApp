@@ -11,26 +11,25 @@ const FeaturedRow = ({id, title, description}) => {
     useEffect(() => {
         client.fetch(
             `
-                *[_type == "featured" && _id == $id] {
-                    ...,
-                    restaurants[]->{
-                        ...,
-                        dishes[]->
-                        type-> {
-                            name
-                        }
-                    },
-                }[0]
-            `, 
-            { id }
+            *[_type == "featured" && _id == $id] {
+                ...,
+                restaurants[]->{
+                  ...,
+                  dishes[]->,
+                  type-> {
+                    name
+                  }
+                },
+              }[0]
+            `, { id: id }
         ).then(data => {
             setRestaurants(data?.restaurants);
+            console.log(restaurants);
         }).catch(error => {
             console.log(error);
           });
     }, []);
 
-    console.log(restaurants);
   return (
     <View>
         <View className='mt-4 flex-row items-center justify-between px-4'>
